@@ -34,6 +34,7 @@ const CoinContextProvider = (props) => {
             setAllCoin(res.data)
         }).catch(error => console.log(error))
     }, [currency]);
+    
 
     const contextValue = {
         allcoin,
