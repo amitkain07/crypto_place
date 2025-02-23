@@ -51,7 +51,7 @@ const Coin = () => {
   }
 
   return (
-    <div className="coin  ">
+    <div className="coin">
       <div className="coin-name flex flex-col mb-10 items-center justify-center">
         <img src={coinData.image.large} alt={coinData.name} />
         <p>
@@ -60,8 +60,10 @@ const Coin = () => {
           </b>
         </p>
       </div>
-      <div className="coin-chart">
-        <LineChart historicalData={historicalData} />
+      <div className="coin-chart flex flex-col gap-4">
+        <LineChart historicalData={historicalData?.prices} name="Prices chart"/>
+        <LineChart historicalData={historicalData?.market_caps} name="Market Cap Chart"/>
+        <LineChart historicalData={historicalData?.total_volumes} name="Total Volume Chart"/>
       </div>
     </div>
   );
